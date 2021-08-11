@@ -6,15 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script>
-
-    </script>
 </head>
 
 <body>
     <p>...содержимое перед скриптом defer...</p>
 
-    <script defer src="https://javascript.info/article/script-async-defer/long.js?speed=1"></script>
+    <script defer src="https://google-analytics.com/analytics.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.3.0/lodash.js"></script>
 
     <!-- Это не отобразится, пока скрипт не загрузится -->
     <p>...содержимое после скрипта defer...</p>
@@ -28,6 +26,14 @@
     <script async src="https://javascript.info/article/script-async-defer/small.js"></script>
 
     <p>...содержимое после скриптов acync...</p>
+    <p>
+        С атрибутом async парсинг HTML продолжается до тех пор, пока браузер не загрузит файл сценария по сети,
+        поэтому парсинг и загрузка скрипта происходят параллельно.
+        Как только скрипт становится доступным в браузере, парсинг HTML приостанавливается и скрипт выполняется.
+        C атрибутом defer, упомянутым в теге скрипта, файлы скрипта загружаются параллельно, пока продолжается парсинг
+        HTML.
+        Но выполнение откладывается до завершения парсинга HTML.
+    </p>
 </body>
 
 </html>
